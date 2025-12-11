@@ -1,3 +1,116 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/** 
+* Custom Font Family
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+   font-family: "Knockout";
+   src: url("/fonts/Knockout-Regular.otf") format("opentype");
+   font-style: normal;
+   font-weight: 700;
+}
+
+/** 
+* Styling
+*/
+@import "tailwindcss";
+
+@theme {
+    /* Font Family */
+    --font-body: "Nunito", sans-serif;
+    --font-heading: "Knockout", sans-serif;
+    --font-subheading: "Open Sans", sans-serif;
+
+    /* Brand Colors */
+    --color-black: #0D0D0D;
+    --color-white: #FFFFFF;
+    --color-purple: #27004B;
+    --color-grey: #D1D3D4;
+    --color-grey-dark: #262626;
+    --color-grey-light: #F8F8F8;
+    --color-fuschia: #810054;
+    --color-gold: #DBA510;
+
+    /* Height */
+    --banner-height: calc(100vh - 96px);
+
+    /* Typography */
+
+
+    /* Misc */
+    /* --rounded-img: 22px; */
+
+    /* Keyframes */
+    --animate-fade-up: fade-up 0.8s ease-out forwards;
+
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(72px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(72px);
+}
+  
+.fade-up.visible {
+    animation: var(--animate-fade-up);
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+p {
+    @apply mb-4 text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply mb-4;
+}
+
+.gallery-container:has(:hover) .gallery-item:not(:hover) { 
+    filter: grayscale(1) brightness(0.5); 
+    transition: filter 0.4s ease-out;
+} 
+
+.gallery-container:has(:hover) .gallery-item:not(:hover) [data-main-image] {
+    transform: scaleX(1); 
+    transition: transform 0.4s cubic-bezier(0.61,1,0.88,1);
+    will-change: transform; /* helps smoothness */
+}
+
+.gallery-item:hover [data-main-image] { 
+    transition: transform 0.4s cubic-bezier(0.61,1,0.88,1);
+    transform: scale3d(1.08, 1.08, 1);
+}
+
+.global-button {
+    @apply relative inline-block pointer-events-auto cursor-pointer rounded-2xl px-7 py-4 uppercase font-bold text-sm before:bg-purple bg-white border hover:border overflow-hidden tracking-wider before:absolute after:absolute before:top-0 after:top-0 before:left-0 after:left-0 before:w-full after:w-full before:h-full after:h-full text-white hover:text-purple;
+}
+
+.button::before {
+	content: '';
+	width: 120%;
+	left: -10%;
+	transform: skew(30deg);
+	transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.button:hover::before {
+	transform: translate3d(100%,0,0);
+}
+
