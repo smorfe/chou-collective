@@ -9,7 +9,9 @@ const NavigationComponent = () => {
       <header className="sticky top-0 z-50 bg-white w-full shadow-sm overflow-hidden md:overflow-visible py-3 md:py-0">
          <div className="max-w-4xl mx-auto px-4 grid grid-cols-12 gap-4 items-center">
             <div className="col-span-4">
-               <StaticImage src="../../images/chou-collective-logo.svg" alt="CHOU Collective logo" height={ 64 } />
+               <a href="/">
+                  <StaticImage src="../../images/chou-collective-logo.svg" alt="CHOU Collective logo" height={ 64 } />
+               </a>
             </div>
             <div className="col-span-8 md:h-full">
                <button

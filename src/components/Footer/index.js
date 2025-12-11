@@ -8,7 +8,9 @@ const FooterComponent = () => {
       <footer className="bg-purple py-10 z-0 text-white sticky bottom-0">
          <div className="max-w-2xl mx-auto px-4 grid grid-cols-12 gap-4 items-center">
             <div className="col-span-12 sm:col-span-3 text-center">
-                <StaticImage src="../../images/footer-logo.svg" alt="CHOU Collective logo" height={75} />
+               <a href="/">
+                  <StaticImage src="../../images/footer-logo.svg" alt="CHOU Collective logo" height={ 75 } />
+               </a>
             </div>
             <div className="col-span-12 sm:col-span-9 text-center sm:text-left mt-6 sm:mt-0">
                <p className="text-gold uppercase text-2xl! md:text-4xl! font-bold font-heading tracking-wider">Let's Connect</p>
