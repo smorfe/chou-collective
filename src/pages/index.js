@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import NavigationComponent from "../components/Navigation";
 import HeroComponent from "../components/Hero";
-import testImage from "../images/weaving-image-1.jpg";
 import { StaticImage } from "gatsby-plugin-image";
 import FadeUpSection from "../elements/FadeUpSection";
 import FooterComponent from "../components/Footer";
@@ -64,7 +63,7 @@ const TemplateHomepage = () => {
                   >
                     <img
                       ref={ imgRef }
-                      src={ testImage }
+                      src="../images/weaving-image-1.jpg"
                       height={ 700 }
                       alt="Weaving Purposeful Networks - Image 1"
                       className="max-w-[700px] sm:max-w-[1000px] md:max-w-[700px] object-cover object-center"
